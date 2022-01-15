@@ -8,7 +8,7 @@ This model is then compared to an Azure AutoML run.
 ## Summary
 This dataset contains data from a banks telemarketing campaign. The objective of this project is to build a machine learning model which can identify whether a customer will subscribe to the marketing campaign.
 
-The best performing classification model was found to be a voting ensemble which consisted of an XGBoost model and logistic regression model. This model had a classification accuracy of 91.8% which outperformed the logistic regression model which was optimised using Hyperdrive.
+The best performing classification model was found to be a voting ensemble which consisted of XGBoost, SGD and LightGBM models. This ensemble model had a classification accuracy of 91.8% which outperformed the logistic regression model which was optimised using Hyperdrive.
 
 ## Scikit-learn Pipeline
 The model used was a logistic regression model which used hyperparameter tuning to tune the parameters for regularization strength and the maximum number of iterations.
@@ -40,7 +40,7 @@ The following hyperparameters have been used for the first model within the voti
 | tree_method      | auto  |
 
 ## Pipeline comparison
-The Scikit-learn Pipeline is significantly more simple, consisting of just one logistic regression model which is not standardised. Whereas the AutoML voting ensemble uses an ensemble of 10 models, which have various preprocessing steps such as scaling strategies. The hyperdrive optimised pipeline had an accuracy of 0.91 whereas the AutoML pipeline produced a model with an accuracy of 91.8%.
+The Scikit-learn Pipeline is significantly more simple, consisting of just one logistic regression model which is not standardised. Whereas the AutoML voting ensemble uses an ensemble of 10 models, which have various preprocessing steps such as scaling strategies. The hyperdrive optimised pipeline had an accuracy of 91.0% whereas the AutoML pipeline produced a model with an accuracy of 91.8%.
 
 ## Future work
 Future experiments could be improved by using bayesian hyperparameter optimization to efficiently find hyperparameters. Furthermore, varying the cross validation number of folds could be used to see if we can increase accuracy.
